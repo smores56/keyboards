@@ -1,80 +1,71 @@
-Keyboards
-=========
+# Keyboards
 
-I design open-source 34-key columnar keyboards with pinky clusters. The design
-files, ordering notes, and pictures live with each board, and everything is MIT
-licensed.
+![Four of my boards: an Osprangle, a Clog V2, an Osprette, and a Sephirette](images/collage.jpg)
 
-![Six of my boards](./images/collage.jpg)
+I design open-source 34-key columnar keyboards with pinky clusters. There are two families, the [Osprettes][osprette]
+(unibodies) and the [Clogs][clog] (splits).
 
-There are two families. Boards in a family share a 34-key layout; firmware
-depends on the controller. Each family lives in one repo with a folder per board.
+## [The Osprette family][osprette] (unibodies)
 
-## The Osprette family
+The OG, based on the [balbuzard]. Great for never having to move your hands, only your fingers.
 
-Unibody boards, from the original through the hotswap Osprangle and the tiny
-Roadkill.
+Best for travel.
 
-![The Osprangle](./images/osprangle.jpg)
+![The Osprangle](images/osprangle.jpg)
 
-| Board | Switches | Controller | Notes |
-| --- | --- | --- | --- |
-| [Osprette](https://github.com/smores56/osprette/tree/main/v1) | Choc V1 | Pro Micro | the original |
-| [Osprette V2](https://github.com/smores56/osprette/tree/main/v2) | Choc V1 | Pro Micro | nicer case, optional hotswap |
-| [Osprette V3](https://github.com/smores56/osprette/tree/main/v3) | Choc V1 | Pro Micro | direct solder |
-| [Osprette MX](https://github.com/smores56/osprette/tree/main/mx) | MX | Pro Micro | MX version |
-| [Osprangle](https://github.com/smores56/osprette/tree/main/osprangle) | Choc V2 | Pro Micro | hotswap |
-| [Roadkill](https://github.com/smores56/osprette/tree/main/roadkill) | Kailh PG1316S | Pro Micro | butterfly switches |
+| Board                                              | Switches      | Controller | Notes                        |
+| -------------------------------------------------- | ------------- | ---------- | ---------------------------- |
+| [Osprette](../../../osprette/tree/main/v1)         | Choc V1       | Pro Micro  | the original                 |
+| [Osprette V2](../../../osprette/tree/main/v2)      | Choc V1       | Pro Micro  | nicer case, optional hotswap |
+| [Osprette V3](../../../osprette/tree/main/v3)      | Choc V1       | Pro Micro  | direct solder                |
+| [Osprette MX](../../../osprette/tree/main/mx)      | MX            | Pro Micro  | MX version                   |
+| [Osprangle](../../../osprette/tree/main/osprangle) | Choc V2       | Pro Micro  | hotswap                      |
+| [Roadkill](../../../osprette/tree/main/roadkill)   | Kailh PG1316S | Pro Micro  | butterfly switches           |
 
-## The Clog family
+## [The Clog][clog] family (splits)
 
-Split boards, the split version of the Osprette.
+The same dang thing, cleft in twain. Slightly better for ergonomics if you have the desk space.
 
-![The Steel Toe](./images/steel-toe.jpg)
+Best for home.
 
-| Board | Switches | Controller | Notes |
-| --- | --- | --- | --- |
-| [Clog](https://github.com/smores56/clog/tree/main/v1) | Choc V1 | Pro Micro | the original split |
-| [Clog V2](https://github.com/smores56/clog/tree/main/v2) | Choc V1 | Xiao BLE | wireless only, splay, roller |
-| [Clog V3](https://github.com/smores56/clog/tree/main/v3) | Choc V1 | Pro Micro | solder or hotswap |
-| [Clog V4](https://github.com/smores56/clog/tree/main/v4) | Choc V1 | Xiao | hotswap with a switch plate |
-| [Steel Toe](https://github.com/smores56/clog/tree/main/steel-toe) | Choc V1 | Pro Micro | BoardSource's V3-derived board |
-| [Sephirette](https://github.com/smores56/clog/tree/main/sephirette) | MX | Pro Micro | MX split |
+![The Steel Toe](images/steel-toe.jpg)
 
-Each family repo has its own index with more detail: [the Osprette][osprette]
-and [the Clog][clog].
+| Board                                            | Switches | Controller | Notes                          |
+| ------------------------------------------------ | -------- | ---------- | ------------------------------ |
+| [Clog](../../../clog/tree/main/v1)               | Choc V1  | Pro Micro  | the original split             |
+| [Clog V2](../../../clog/tree/main/v2)            | Choc V1  | Xiao BLE   | wireless only, splay, roller   |
+| [Clog V3](../../../clog/tree/main/v3)            | Choc V1  | Pro Micro  | solder or hotswap              |
+| [Clog V4](../../../clog/tree/main/v4)            | Choc V1  | Xiao       | hotswap with a switch plate    |
+| [Steel Toe](../../../clog/tree/main/steel-toe)   | Choc V1  | Pro Micro  | BoardSource's V3-derived board |
+| [Sephirette](../../../clog/tree/main/sephirette) | MX       | Pro Micro  | MX split                       |
+
+## Firmware
+
+The Osprette boards all use the same `osprette` firmware in QMK and `osprette` shield in ZMK. The Clog boards share the
+`clog` firmware in QMK and ZMK, though the Clog V2 has its own ZMK-only config, and Clog V4 runs the `geta` shield in my
+[zmk-config].
+
+My personal keymaps live in [qmk_userspace] and [zmk-config].
+
+## Building
+
+Most boards use my [smores.pretty][smores-pretty] KiCad library as a submodule, so clone with `--recurse-submodules`.
+The original Osprette, Osprette MX, Clog, and Sephirette use Foostan's `kbd` and Daprice's `keyswitches.pretty` instead.
+Each board's README has ordering details and pictures.
 
 ## Earlier designs
 
 - [Fun Size][fun-size]: a 32-36 key hotswap low-profile board with encoder support.
-- [Mankoff's Key][mankoffskey]: a 42-key split.
-- [Papasweep][papasweep]: a one-handed MX board for typing with taipo.
+- [Mankoffskey]: a 42-key split.
+- [Papasweep]: a one-handed MX board for typing with [taipo].
 
-## Firmware
-
-The Pro Micro Osprette boards share the `osprette` firmware in QMK (once [PR
-#26450][qmk-pr] lands) and the `osprette` shield in ZMK. The Pro Micro Clog
-boards share the `clog` firmware in QMK and ZMK. Clog V2 has its own ZMK config,
-and Clog V4 runs the `geta` shield in my [zmk-config][zmk-config]. Roadkill has
-no firmware yet.
-
-My personal keymaps live in [qmk_userspace][qmk_userspace] and
-[zmk-config][zmk-config].
-
-## Building
-
-Most boards use my [smores.pretty][smores-pretty] KiCad library as a submodule,
-so clone with `--recurse-submodules`. The original Osprette, Osprette MX, Clog,
-and Sephirette use Foostan's `kbd` and Daprice's `keyswitches.pretty` instead.
-Each board's README has ordering details and pictures.
-
-
-[osprette]: https://github.com/smores56/osprette
-[clog]: https://github.com/smores56/clog
-[fun-size]: https://github.com/smores56/fun-size
-[mankoffskey]: https://github.com/smores56/mankoffskey
-[papasweep]: https://github.com/smores56/papasweep
-[qmk-pr]: https://github.com/qmk/qmk_firmware/pull/26450
-[qmk_userspace]: https://github.com/smores56/qmk_userspace
-[zmk-config]: https://github.com/smores56/zmk-config
-[smores-pretty]: https://github.com/smores56/smores.pretty
+[balbuzard]: https://github.com/brow/balbuzard
+[clog]: ../../../clog
+[fun-size]: ../../../fun-size
+[mankoffskey]: ../../../mankoffskey
+[osprette]: ../../../osprette
+[papasweep]: ../../../papasweep
+[qmk_userspace]: ../../../qmk_userspace
+[smores-pretty]: ../../../smores.pretty
+[taipo]: https://inkeys.wiki/en/keymaps/taipo
+[zmk-config]: ../../../zmk-config
