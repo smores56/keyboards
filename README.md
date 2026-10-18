@@ -22,7 +22,7 @@ Best for travel.
 | [Osprangle](../../../osprette/tree/main/osprangle) | Choc V2       | Pro Micro  | hotswap                      |
 | [Roadkill](../../../osprette/tree/main/roadkill)   | Kailh PG1316S | Pro Micro  | butterfly switches           |
 
-## [The Clog][clog] family (splits)
+## [The Clog family][clog] (splits)
 
 The same dang thing, cleft in twain. Slightly better for ergonomics if you have the desk space.
 
