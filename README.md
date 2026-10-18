@@ -7,10 +7,10 @@ licensed.
 
 ![Six of my boards](./images/collage.jpg)
 
-There are two families. Every board in a family shares the same layout and
-firmware, so each family lives in one repo with a folder per board.
+There are two families. Boards in a family share a 34-key layout; firmware
+depends on the controller. Each family lives in one repo with a folder per board.
 
-# The Osprette family
+## The Osprette family
 
 Unibody boards, from the original through the hotswap Osprangle and the tiny
 Roadkill.
@@ -26,7 +26,7 @@ Roadkill.
 | [Osprangle](https://github.com/smores56/osprette/tree/main/osprangle) | Choc V2 | Pro Micro | hotswap |
 | [Roadkill](https://github.com/smores56/osprette/tree/main/roadkill) | Kailh PG1316S | Pro Micro | butterfly switches |
 
-# The Clog family
+## The Clog family
 
 Split boards, the split version of the Osprette.
 
@@ -44,13 +44,13 @@ Split boards, the split version of the Osprette.
 Each family repo has its own index with more detail: [the Osprette][osprette]
 and [the Clog][clog].
 
-# Earlier designs
+## Earlier designs
 
 - [Fun Size][fun-size]: a 32-36 key hotswap low-profile board with encoder support.
 - [Mankoff's Key][mankoffskey]: a 42-key split.
 - [Papasweep][papasweep]: a one-handed MX board for typing with taipo.
 
-# Firmware
+## Firmware
 
 The Pro Micro Osprette boards share the `osprette` firmware in QMK (once [PR
 #26450][qmk-pr] lands) and the `osprette` shield in ZMK. The Pro Micro Clog
@@ -61,7 +61,7 @@ no firmware yet.
 My personal keymaps live in [qmk_userspace][qmk_userspace] and
 [zmk-config][zmk-config].
 
-# Building
+## Building
 
 Most boards use my [smores.pretty][smores-pretty] KiCad library as a submodule,
 so clone with `--recurse-submodules`. The original Osprette, Osprette MX, Clog,
